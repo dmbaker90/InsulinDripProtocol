@@ -1,0 +1,50 @@
+<div class="wrapper">
+    <h1>Insulin Drip Protocol NOT for DKA</h1>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Initiation of Infusion</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <ul>
+                <li>Initiate insulin infusion if 2 consecutive BG>180 or 1 BG>200</li>
+                <li>Initiate insulin infusion at 2 units/hour</li>
+            </ul>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Frequency of Monitoring</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <ul>
+                <li>BG every 6 hours until insulin infusion initiated based on above criteria</li>
+                <li>BG every 30 minutes: BG greater than 200 mg/dl or less than 100 mg/dl or after drip is stopped or
+                    decreased by half (50%) or more</li>
+                <li>BG every 60 minutes: BG is 100 - 200 mg/dl</li>
+                <li>BG every 120 minutes: BG is 145 - 180, AND there is less than 15mg/dl BG variation over 4 hours and
+                    insulin drip rate remains unchanged for 4 hours. If any change in BG more than 15 mg/dl or any
+                    change in insulin rate more than 0.5 units, return to checking BG every 30-60 minutes</li>
+                <li>During initiation of, rate change of, or cessation of any nutritional support (i.e. tube feeds or
+                    TPN), check BG every 30 minutes X 4.</li>
+            </ul>
+        </mat-card-content>
+    </mat-card>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Titrations</mat-card-title>
+        </mat-card-header>
+        <div class="input-div">
+            <input [(ngModel)]="bgValue" class="insulin-input" placeholder="Enter Blood Glucose (BG)" />
+            <mat-icon class="search-button">search</mat-icon>
+        </div>
+        <mat-card-header>
+            <mat-card-title>Actions</mat-card-title>
+        </mat-card-header>
+        <mat-card-content *ngIf="bgValue && bgValue <= 60">
+            <ul>
+                <li>STOP INSULIN</li>
+            </ul>
+        </mat-card-content>
+    </mat-card>
+</div>
